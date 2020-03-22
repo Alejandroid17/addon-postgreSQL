@@ -1,0 +1,28 @@
+{
+  "name": "PostgreSQL",
+  "version": "0.0.1",
+  "slug": "postgresql",
+  "description": "An PostgreSQL database server",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "before",
+  "boot": "auto",
+  "options": {
+    "databases": ["hassio"],
+    "logins": [{ "username": "hassio", "password": null }],
+    "rights": [
+      {
+        "username": "hassio",
+        "database": "hassio",
+        "grant": "ALL PRIVILEGES"
+      }
+    ]
+  },
+  "schema": {
+    "databases": ["str"],
+    "logins": [{ "username": "str", "password": "str" }],
+    "rights": [{ "username": "str", "database": "str", "grant": "str" }]
+  },
+  "ports": {
+    "5432/tcp": 5432
+  }
+}
